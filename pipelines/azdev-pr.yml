@@ -1,0 +1,33 @@
+name: Code Review GPT
+trigger:
+  - main
+pr:
+  - main
+
+variables:
+  TARGET_BRANCH: $[replace(variables['System.PullRequest.TargetBranch'],'refs/heads/','origin/')]
+  BASE_SHA: $(git merge-base $(TARGET_BRANCH) HEAD)
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: GTP_Review
+    jobs:
+      - job: gpt_review
+        displayName: Code Review GPT
+        workspace:
+          clean: all
+        steps:
+          - script: |
+              npm install ai-review-code-rn --save
+            displayName: "Install Package ai-review-code-rn"
+
+          - script: |
+              npx ai-review-code-rn review
+            env:
+              API_TOKEN: $(API_TOKEN)
+              OPENAI_API_KEY: $(OPENAI_API_KEY)
+              BASE_SHA: $(BASE_SHA)
+            workingDirectory: $(Build.SourcesDirectory)
+            displayName: "Run code review script"

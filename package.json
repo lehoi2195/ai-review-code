@@ -9,7 +9,7 @@
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lehoi2195/ai-review-code-rn"
+    "url": "https://github.com/lehoi2195/ai-review-code"
   },
   "scripts": {
     "lint-fix": "eslint . --ext=js,ts,tsx --fix",

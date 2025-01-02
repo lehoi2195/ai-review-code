@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lehoi2195/ai-review-code.git"
+    "url": "https://github.com/lehoi2195/ai-review-code"
   },
   "author": "lehoi2195@gmail.com",
   "license": "MIT",

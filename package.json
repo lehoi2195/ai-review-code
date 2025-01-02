@@ -1,24 +1,14 @@
 {
-  "name": "ai-review-code-rn",
+  "name": "ai-review-code",
   "version": "0.0.1",
-  "description": "AI reviewer code RN",
-  "bin": {
-    "ai-review-code-rn": "./dist/index.js"
-  },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "description": "AI tool to review code.",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lehoi2195/ai-review-code"
+    "url": "git+https://github.com/lehoi2195/ai-review-code.git"
   },
-  "scripts": {
-    "lint-fix": "eslint . --ext=js,ts,tsx --fix",
-    "lint-test": "eslint . --ext=js,ts",
-    "start": "ts-node ./src/index.ts",
-    "review": "ts-node ./src/index.ts review",
-    "test-unit": "dotenv -e .env jest",
-    "publish-package": "npm i && npm run build && npm publish --access public"
-  },
+  "author": "Your Name lehoi2195@gmail.com",
+  "license": "MIT",
   "keywords": [
     "code-review",
     "rn-code-review",
@@ -30,8 +20,13 @@
     "ai",
     "llama"
   ],
-  "author": "Matt Carey",
-  "license": "MIT",
+  "scripts": {
+    "lint-fix": "eslint . --ext=js,ts,tsx --fix",
+    "lint-test": "eslint . --ext=js,ts",
+    "start": "ts-node ./src/index.ts",
+    "review": "ts-node ./src/index.ts review"
+  },
+
   "dependencies": {
     "azure-devops-node-api": "^12.3.0",
     "dotenv": "^16.3.1",

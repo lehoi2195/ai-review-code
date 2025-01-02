@@ -1,6 +1,6 @@
 {
   "name": "ai-review-code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AI tool to review code React-Native",
   "main": "index.js",
   "repository": {
